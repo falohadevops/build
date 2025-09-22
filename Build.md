@@ -1,0 +1,15 @@
+ - *** Build Notes
+ - Install latest OS version
+ - ssh root@<new host>
+ - passwd
+ - mkdir rpms
+ - timedatectl set-timezone America/New_York
+ - dnf -y update
+ - git clone https://github.com/sfanjoy/build.git
+ - cd build/<os name>; ./install.sh; cd; cd bin
+ - ./sshd_config.sh
+ - ./user_setup.sh sfanjoy
+ - ./user_setup.sh jobber
+ - ./firewall.sh reset
+ - ./firewall.sh add-ip <ssh/putty host>
+ - test connection and drop of console use putty/ssh
