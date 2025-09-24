@@ -18,10 +18,9 @@ uinfo=`getent passwd $1`
 if [[ ${#uinfo} -gt 0 ]]; then
   echo "User $1 already exists...Good"
 else
-  echo "Adding User $1..."
+  echo "Adding User $1 with initial pass..."
   /usr/sbin/useradd -p $2 -s /bin/bash $1
-  echo "Setting $1 password..."
-  passwd $1
+  echo "Setting user $1 mode"
   /usr/sbin/usermod -a -G ssh-uzer $1
 fi
 #
@@ -46,7 +45,7 @@ chmod 644 /home/$1/.vimrc
 # Only the user should see their configs and shells
 # .ssh/ is sensitive to outside view/ownership
 if [ -f /root/config/home/$1/authorized_keys ]; then
-  echo "Installing keys for User sfanjoy..."
+  echo "Installing keys for User $1..."
   mkdir -p -m 700 /home/$1/.ssh
   cp /root/config/home/$1/authorized_keys /home/$1/.ssh
   chmod 700 /home/$1/.ssh

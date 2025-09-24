@@ -1,7 +1,7 @@
 
 #!/bin/bash
 if [ -z "$1" ] || [ -z "$2" ] [ -z "$3"  ]; then
-        echo "Usage: build_and_install.sh <username> <passwd> <allowed_ip>";
+        echo "Usage: build_and_install.sh <username> <passwd> <user_ip>";
         echo ""
         exit
 fi
