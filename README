@@ -1,6 +1,21 @@
+To use script build_and_install.sh build Linux (CentOS) machine, install Docker, create user account, setup firewall:
 
-To build machine, install docker, add user and setup firewall run:
-  ./build_and_install.sh <user> <passwd> <user_ip>
+To download this script on Linux machine with preinstalled wget:
+
+  wget https://raw.githubusercontent.com/falohadevops/build/refs/heads/main/build_and_install.sh
+
+
+To build machine, install docker, add user and setup firewall run this script with <user> <password> <user_ip>, password must be at least 8 characters that is not in any dictionary or simplistic/systematic, with upercaser, lowercase, special character and umber:
+
+  ./build_and_install.sh <user> <password> <user_ip>
+
+  Note:
+    1) remember to take note of the <password> used to set the user password 
+    2) when this script installing nginx, select 'y' when prompted "Is this ok [y/N]:"
+    3) this script blocks login with password, user need to setup public/private key pairs in the client UI agent like Pageant:
+      a) when creating private key, the user is required to create a password for loading the private key created to client UI agent like Pageant if using Putty as client UI and save the private key in a file on the user's local PC, the user needs to take note of the password used to load the private key
+      b) after creating public key, the user needs to create .ssh directory in the user's home directory, save it the public key in a file named "authorized_keys" and add it in .ssh directory, make its permission readable, 
+      c) the user need to login with the client UI like Putty by loading the privated key in the client UI agent like Pageant
 
 To only add user run:
   ./add_user_account.sh <user> <passwd>
