@@ -2,7 +2,7 @@
 # add EWT main application user
 # Add the EWT user group for ssh access
 if [ -z "$1" ] || [ -z "$2" ]; then
-        echo "Usage: user_setup.sh <username> <passwd>";
+        echo "Usage: add_user_account.sh <username> <passwd>";
         echo ""
         exit
 fi

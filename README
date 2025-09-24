@@ -1,0 +1,9 @@
+
+To build machine, install docker, add user and setup firewall run:
+  ./build_and_install.sh <user> <passwd> <user_ip>
+
+To only add user run:
+  ./add_user_account.sh <user> <passwd>
+
+To only add user ip run:
+  ./firewall.sh add-ip <ip>
