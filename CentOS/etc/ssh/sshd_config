@@ -1,0 +1,8 @@
+# SAF sshd config
+AllowGroups ssh-uzer
+PubkeyAuthentication yes
+PermitRootLogin no
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+GSSAPIAuthentication no
+UseDNS no
