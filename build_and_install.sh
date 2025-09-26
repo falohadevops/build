@@ -1,6 +1,6 @@
 
 #!/bin/bash
-if [ -z "$1" ] || [ -z "$2" ] [ -z "$3"  ]; then
+if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
         echo "Usage: build_and_install.sh <username> <passwd> <user_ip>";
         echo ""
         exit
@@ -8,7 +8,7 @@ fi
 
 # set timezone to GMT/UTC
 timedatectl set-timezone UTC
-mkdir rmps
+mkdir rpms
 cd rpms
 #Updates all packages, including packages on which they depend
 dnf -y update
