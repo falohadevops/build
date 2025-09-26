@@ -36,16 +36,16 @@ cd bin
 
 
 # Install Docker
-dnf -y remove podman runc
-curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
-sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/docker-ce.repo
-dnf --enablerepo=docker-ce-stable -y install docker-ce
+#dnf -y remove podman runc
+#curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
+#sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/docker-ce.repo
+#dnf --enablerepo=docker-ce-stable -y install docker-ce
 
-mkdir -p /etc/docker
-cp -r /root/config/etc/docker /etc
+#mkdir -p /etc/docker
+#cp -r /root/config/etc/docker /etc
 
 # enable Docker
-systemctl enable --now docker
+#systemctl enable --now docker
 
 # Install nginx
 dnf install nginx
