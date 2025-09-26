@@ -1,0 +1,48 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+test -s ~/.alias && . ~/.alias || true
+
+alias rm="rm -i"
+alias cp='cp -i'
+alias mv='mv -i'
+
+#
+export COLOR=true
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+
+set -o vi
+
+#XTERM_TITLE="${USER}@${HOSTNAME}"
+#SCREEN_TITLE="${PWD}"
+#PROMPT_COMMAN='echo -ne "\033]0;$XTERM_TITLE\007\033k\033\\"'
+#PS1=${PS1%?}
+#PS1=${PS1%?}\n'$ '
+#PS1="\[\e[7m\] ${PS1} \[\e[27m\]"
+
+PS1="[\u@\h \w]"
+PS1="\[\e[7m\] ${PS1} \[\e[27m\]"
+PS1=${PS1%?}\n'$ '
+
