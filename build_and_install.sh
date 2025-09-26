@@ -48,10 +48,10 @@ cd bin
 #systemctl enable --now docker
 
 # Install nginx
-dnf install nginx
+#dnf install nginx
 
 # Start nginx server
-systemctl start nginx
+#systemctl start nginx
 
 # Enable nginx server
-systemctl enable nginx
+#systemctl enable nginx
